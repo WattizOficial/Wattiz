@@ -36,9 +36,9 @@
 
 > **Wattiz** é uma plataforma de monitoramento de energia elétrica em tempo real, desenvolvida para ajudar **famílias e pequenos negócios** a entender, controlar e reduzir seu consumo de energia — de forma simples, visual e inteligente.
 
-Com o Wattiz, o usuário conecta seus dispositivos medidores ao sistema e passa a ter visibilidade total sobre o consumo da sua residência ou estabelecimento: por cômodo, por equipamento, por período. A plataforma ainda conta com **Lume**, nosso assistente virtual de energia, pronto para responder dúvidas e sugerir melhorias.
+Com a Wattiz, o usuário conecta seus dispositivos medidores ao sistema e passa a ter visibilidade total sobre o consumo da sua residência ou estabelecimento: por cômodo, por equipamento, por período. A plataforma ainda conta com a **Lume**, nossa assistente virtual de energia, que está sempre pronta para responder dúvidas e sugerir melhorias.
 
-**Por que o Wattiz?**
+**Por que a Wattiz?**
 
 - 💡 Visualize seu consumo em tempo real, sem complicação
 - 📉 Identifique desperdícios e reduza sua conta de luz
@@ -52,7 +52,7 @@ Com o Wattiz, o usuário conecta seus dispositivos medidores ao sistema e passa 
 
 ## Tecnologias
 
-As principais tecnologias utilizadas no desenvolvimento do Wattiz:
+As principais tecnologias utilizadas no desenvolvimento:
 
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
@@ -147,7 +147,7 @@ Após iniciar o projeto localmente:
 
 ## Contribuidores
 
-Quer contribuir com o Wattiz? Siga os passos abaixo:
+Quer contribuir com a Wattiz? Siga os passos abaixo:
 
 1. **Faça um fork** do repositório
 2. **Crie uma branch** para sua feature
