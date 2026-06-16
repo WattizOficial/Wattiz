@@ -1666,10 +1666,10 @@ function EletrodomesticosContent() {
                   <h3>{item.nome}</h3>
                   <p className={`appliance-status status-${item.status}`}>
                     {item.status === "ligado"
-                      ? "Acesso"
+                      ? "Ligado"
                       : item.status === "alerta"
                         ? "Alerta"
-                        : "Apagado"}
+                        : "Desligado"}
                   </p>
                 </div>
                 <div className="appliance-actions">
