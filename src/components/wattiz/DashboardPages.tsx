@@ -4025,6 +4025,10 @@ function PerfilContent() {
     typeof window !== "undefined" ? localStorage.getItem(PROFILE_PHOTO_KEY) || profileAvatar : profileAvatar,
   );
   const [saved, setSaved] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [deleteConfirmText, setDeleteConfirmText] = useState("");
+  const [deleting, setDeleting] = useState(false);
+  const [deleteError, setDeleteError] = useState("");
 
   useEffect(() => {
     const sync = () => {
@@ -4078,6 +4082,45 @@ function PerfilContent() {
     reader.readAsDataURL(file);
   };
 
+  const openDeleteModal = () => {
+  setDeleteConfirmText("");
+  setDeleteError("");
+  setShowDeleteModal(true);
+};
+
+const closeDeleteModal = () => {
+  if (deleting) return;
+  setShowDeleteModal(false);
+  setDeleteConfirmText("");
+  setDeleteError("");
+};
+
+  const deleteAccountRequest = async () => {
+  if (hasBackend() && getAccessToken()) {
+    await users.deleteAccount();
+  }
+};
+
+const handleDeleteAccount = async () => {
+  if (deleteConfirmText.trim().toLowerCase() !== email.trim().toLowerCase()) {
+    setDeleteError("O e-mail digitado não corresponde à sua conta.");
+    return;
+  }
+  setDeleting(true);
+  setDeleteError("");
+  try {
+    await deleteAccountRequest();
+    clearTokens();
+    if (typeof window !== "undefined") {
+      localStorage.clear();
+      window.location.href = "/";
+    }
+  } catch (err) {
+    setDeleting(false);
+    setDeleteError(err instanceof Error ? err.message : "Não foi possível excluir sua conta agora. Tente novamente em instantes.");
+  }
+};
+
   const planDescription: Record<PlanId, string> = {
     gratuito: "Estimativas básicas e dicas simples",
     smart: "Histórico completo, relatórios e simulações",
@@ -4130,10 +4173,13 @@ function PerfilContent() {
             <label>CEP<input value={draft.cep || ""} onChange={(e) => setDraftField("cep", e.target.value)} /></label>
             <label>Nova senha<input type="password" value={draft.senha || ""} onChange={(e) => setDraftField("senha", e.target.value)} /></label>
           </div>
-          <div className="wattiz-profile-actions">
-            <button type="button" onClick={cancelEdit}>Cancelar</button>
-            <button type="button" onClick={saveChanges}>Salvar alterações</button>
-          </div>
+            <div className="wattiz-profile-actions">
+              <button type="button" onClick={cancelEdit}>Cancelar</button>
+              <button type="button" className="wattiz-profile-delete-button" onClick={openDeleteModal}>
+                <Trash2 size={16} /> Excluir conta
+              </button>
+              <button type="button" onClick={saveChanges}>Salvar alterações</button>
+            </div>
         </article>
       )}
 

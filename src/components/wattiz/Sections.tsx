@@ -155,6 +155,8 @@ export default function Sections() {
         </div>
       </section>
 
+      {/* HARDWARE */}
+      <HardwarePremiumVideoSection />
 
       <Section id="problema" className="bg-white">
         <div className="text-center max-w-2xl mx-auto mb-10">
@@ -266,9 +268,6 @@ export default function Sections() {
 
       {/* 6. FUNCIONALIDADES */}
       <FuncionalidadesSection />
-
-      {/* 7. HARDWARE */}
-      <HardwarePremiumVideoSection />
 
       {/* 8. LOJA WATTIZ */}
       <Section id="loja" className="bg-gradient-to-b from-white via-[#fafafa] to-white overflow-hidden">
@@ -496,15 +495,15 @@ export default function Sections() {
         <div className="comentarios-infinito">
           <div className="comentarios-track">
             {[
-              { foto: pessoa1Img, comentario: "Com o Wattiz consegui entender melhor meu consumo e comecei a economizar energia.", nome: "Ana • São Paulo" },
-              { foto: pessoa2Img, comentario: "A Lume me mostrou desperdícios que eu nem percebia dentro de casa.", nome: "Carlos • Guarulhos" },
-              { foto: pessoa3Img, comentario: "Minha mãe consegue usar super fácil. O app é simples, bonito e direto.", nome: "Juliana • SP" },
-              { foto: pessoa4Img, comentario: "Agora consigo acompanhar meus gastos pelo celular de um jeito muito mais claro.", nome: "Rafael • Itaquaquecetuba" },
+              { foto: pessoa1Img, comentario: "Com o Wattiz consegui entender melhor meu consumo e comecei a economizar energia.", nome: "Carlos • São Paulo" },
+              { foto: pessoa2Img, comentario: "A Lume me mostrou desperdícios que eu nem percebia dentro de casa.", nome: "Ana • Guarulhos" },
+              { foto: pessoa3Img, comentario: "Minha mãe consegue usar super fácil. O app é simples, bonito e direto.", nome: "Juliana • São Paulo" },
+              { foto: pessoa4Img, comentario: "Agora consigo acompanhar meus gastos pelo celular de um jeito muito mais claro.", nome: "Rafaela • Itaquaquecetuba" },
               { foto: pessoa5Img, comentario: "O Wattiz me ajudou a criar hábitos melhores e evitar desperdício de energia.", nome: "Larissa • São Paulo" },
-              { foto: pessoa1Img, comentario: "Com o Wattiz consegui entender melhor meu consumo e comecei a economizar energia.", nome: "Ana • São Paulo" },
-              { foto: pessoa2Img, comentario: "A Lume me mostrou desperdícios que eu nem percebia dentro de casa.", nome: "Carlos • Guarulhos" },
-              { foto: pessoa3Img, comentario: "Minha mãe consegue usar super fácil. O app é simples, bonito e direto.", nome: "Juliana • SP" },
-              { foto: pessoa4Img, comentario: "Agora consigo acompanhar meus gastos pelo celular de um jeito muito mais claro.", nome: "Rafael • Itaquaquecetuba" },
+              { foto: pessoa1Img, comentario: "Com o Wattiz consegui entender melhor meu consumo e comecei a economizar energia.", nome: "Carlos • São Paulo" },
+              { foto: pessoa2Img, comentario: "A Lume me mostrou desperdícios que eu nem percebia dentro de casa.", nome: "Ana • Guarulhos" },
+              { foto: pessoa3Img, comentario: "Minha mãe consegue usar super fácil. O app é simples, bonito e direto.", nome: "Juliana • São Paulo" },
+              { foto: pessoa4Img, comentario: "Agora consigo acompanhar meus gastos pelo celular de um jeito muito mais claro.", nome: "Rafaela • Itaquaquecetuba" },
               { foto: pessoa5Img, comentario: "O Wattiz me ajudou a criar hábitos melhores e evitar desperdício de energia.", nome: "Larissa • São Paulo" },
             ].map((depoimento, index) => (
               <div className="comentario-card" key={`${depoimento.nome}-${index}`}>

@@ -12402,6 +12402,86 @@ html:has(.lume-tab-about) {
 }
 
 .wattiz-profile-photo-button { padding: 0 15px !important; }
+
+.wattiz-profile-delete-button {
+  border: 1px solid rgba(220, 38, 38, 0.3) !important;
+  background: rgba(220, 38, 38, 0.06) !important;
+  color: #dc2626 !important;
+}
+
+.wattiz-profile-delete-button:hover {
+  background: rgba(220, 38, 38, 0.12) !important;
+  border-color: rgba(220, 38, 38, 0.5) !important;
+}
+
+.wattiz-delete-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 0, 16, 0.55);
+  backdrop-filter: blur(4px);
+  padding: 16px;
+}
+
+.wattiz-delete-modal {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 24px 60px rgba(10, 0, 16, 0.3);
+}
+
+.wattiz-delete-modal h3 {
+  margin: 0 0 12px;
+  color: #0a0010;
+}
+
+.wattiz-delete-modal p {
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+  color: #4b4565;
+  line-height: 1.5;
+}
+
+.wattiz-delete-modal input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+
+.wattiz-delete-modal-error {
+  color: #dc2626 !important;
+  font-size: 0.82rem !important;
+}
+
+.wattiz-delete-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.wattiz-delete-modal-confirm {
+  background: #dc2626 !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.wattiz-delete-modal-confirm:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .wattiz-profile-photo-button input { display: none !important; }
 
 .wattiz-profile-title-row {
@@ -14525,6 +14605,17 @@ html:has(.lume-tab-about) {
   color: #151126 !important;
   box-shadow: 0 10px 22px rgba(245, 180, 0, 0.24) !important;
   font-size: 0 !important;
+}
+
+.wattiz-profile-clean .wattiz-profile-actions button.wattiz-profile-delete-button {
+  border: 1px solid rgba(220, 38, 38, 0.3) !important;
+  background: rgba(220, 38, 38, 0.06) !important;
+  color: #dc2626 !important;
+}
+
+.wattiz-profile-clean .wattiz-profile-actions button.wattiz-profile-delete-button:hover {
+  background: rgba(220, 38, 38, 0.12) !important;
+  border-color: rgba(220, 38, 38, 0.5) !important;
 }
 
 .wattiz-profile-clean .wattiz-profile-title-row {
@@ -19463,9 +19554,6 @@ section:has(.medidor-grafico-scroll) .absolute.inset-0 strong {
   padding: 0 !important;
   border: 1px solid rgba(255,255,255,.55) !important;
   border-radius: 9999px !important;
-  overflow: hidden !important;
-  background: #fff !important;
-  box-shadow: 0 10px 24px rgba(28, 18, 52, .14) !important;
 }
 
 .wattiz-dashboard-avatar-img {
