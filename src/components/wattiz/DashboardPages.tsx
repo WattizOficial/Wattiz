@@ -4183,6 +4183,43 @@ const handleDeleteAccount = async () => {
         </article>
       )}
 
+      {showDeleteModal && (
+        <div className="wattiz-delete-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="delete-modal-title">
+          <div className="wattiz-delete-modal">
+            <h3 id="delete-modal-title">Excluir conta permanentemente</h3>
+            <p>
+              Esta ação é <strong>irreversível</strong>. Todos os seus dados, histórico e
+              configurações serão apagados e <strong>não poderão ser recuperados</strong>.
+            </p>
+            <p>
+              Para confirmar, digite seu e-mail <strong>{email}</strong> abaixo:
+            </p>
+            <input
+              type="text"
+              value={deleteConfirmText}
+              onChange={(e) => setDeleteConfirmText(e.target.value)}
+              placeholder="Digite seu e-mail"
+              disabled={deleting}
+              autoFocus
+            />
+            {deleteError && <p className="wattiz-delete-modal-error">{deleteError}</p>}
+            <div className="wattiz-delete-modal-actions">
+              <button type="button" onClick={closeDeleteModal} disabled={deleting}>
+                Cancelar
+              </button>
+              <button
+                type="button"
+                className="wattiz-delete-modal-confirm"
+                onClick={handleDeleteAccount}
+                disabled={deleting || deleteConfirmText.trim() === ""}
+              >
+                {deleting ? "Excluindo..." : "Excluir conta"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      
       <article className="wattiz-profile-card">
         <div className="wattiz-profile-section-title"><User size={21} /><h3>Informações Pessoais</h3></div>
         <div className="wattiz-profile-field-grid">
